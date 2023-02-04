@@ -1,7 +1,5 @@
-import { treeObj } from "../interface/treeDataInterface";
-
 // 遍历树
-export const eachTree = (data: Array<treeObj>) => {
+export const eachTree = (data) => {
   if (!data?.length) return [];
 
   data.forEach((item) => {
@@ -12,4 +10,9 @@ export const eachTree = (data: Array<treeObj>) => {
   });
 
   return data;
+};
+
+//  生成树
+export const getTreeData = (arr) => {
+  return arr;
 };

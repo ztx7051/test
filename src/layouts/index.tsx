@@ -1,10 +1,11 @@
 import { Link, Outlet } from 'umi';
+import LeftMenu from './common/Layouts.js'
 import styles from './index.less';
 
 export default function Layout() {
   return (
     <div className={styles.navs}>
-      <ul>
+      {/* <ul>
         <li>
           <Link to="/">Home</Link>
         </li>
@@ -14,11 +15,9 @@ export default function Layout() {
         <li>
           <Link to="/home">home</Link>
         </li>
-        <li>
-          <a href="https://github.com/umijs/umi">Github</a>
-        </li>
-      </ul>
-      <Outlet />
+      </ul> */}
+      <LeftMenu/>
+      <Outlet /> 
     </div>
   );
 }

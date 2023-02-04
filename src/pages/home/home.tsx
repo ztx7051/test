@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { TreeSelect } from "antd";
-// import { eachTree } from "../../utils/eachTree";
-import { eachTree } from "@/utils/eachTree";
+// import { eachTree } from "../../utils/util";
+import { eachTree } from "@/utils/util";
 import { treeObj } from "../../interface/treeDataInterface";
 
 const treeData = [
