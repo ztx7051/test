@@ -2,7 +2,9 @@ import { Link, Outlet } from 'umi';
 import LeftMenu from './common/Layouts.js'
 import styles from './index.less';
 
-export default function Layout() {
+export default function Layout(props) {
+  console.log('props',props);
+  
   return (
     <div className={styles.navs}>
       {/* <ul>

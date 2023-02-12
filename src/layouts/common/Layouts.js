@@ -22,8 +22,8 @@ function getItem(label, key, icon, children, type) {
 const items = [
   getItem("首页", "/home", <PieChartOutlined />),
   getItem("拖拽测试", "/draggerTest", <DesktopOutlined />),
-  getItem("Navigation Two", "sub2", <AppstoreOutlined />, [
-    getItem("Option 9", "9"),
+  getItem("测试", "sub2", <AppstoreOutlined />, [
+    getItem("类组件测试", "/classComponent"),
     getItem("Option 10", "10"),
     getItem("Submenu", "sub3", null, [
       getItem("Option 11", "11"),

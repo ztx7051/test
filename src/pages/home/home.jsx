@@ -37,11 +37,11 @@ const treeData = [
   },
 ];
 
-const HomePage: React.FC = () => {
-  const [value, setValue] = useState<string | undefined>(undefined);
-  const [tree, setTree] = useState<treeObj[] | undefined>([]);
+const HomePage = () => {
+  const [value, setValue] = useState(undefined);
+  const [tree, setTree] = useState([]);
 
-  const onChange = (newValue: string) => {
+  const onChange = (newValue) => {
     setValue(newValue);
   };
 
