@@ -24,7 +24,7 @@ const items = [
   getItem("拖拽测试", "/draggerTest", <DesktopOutlined />),
   getItem("测试", "sub2", <AppstoreOutlined />, [
     getItem("类组件测试", "/classComponent"),
-    getItem("Option 10", "10"),
+    getItem("大数据Select", "/mostData"),
     getItem("Submenu", "sub3", null, [
       getItem("Option 11", "11"),
       getItem("Option 12", "12"),
@@ -40,14 +40,10 @@ const LeftMenu = () => {
   // 点击目录
   const menuItemClick = (item) => {
     console.log("item", item);
-    history.push(item.key);;
+    history.push(item.key);
   };
   return (
-    <div
-      style={{
-        width: 256,
-      }}
-    >
+    <div>
       <Button
         type="primary"
         onClick={toggleCollapsed}

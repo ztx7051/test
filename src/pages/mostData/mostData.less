@@ -1,0 +1,28 @@
+.box {
+  width: 100vw;
+  padding: 32px;
+  .selectClass {
+    width: 200px;
+  }
+
+  .bigDataBox {
+    height: 200px;
+    overflow: auto;
+    position: relative;
+    .scrollBar {
+    //   position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      z-index: -1;
+    }
+
+    .content{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        overflow: auto;
+    }
+  }
+}
