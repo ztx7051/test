@@ -1,0 +1,40 @@
+:root {
+  --itemCol-6: 6;
+  --itemCol-4: 4;
+}
+
+.root {
+  position: relative;
+  width: 100%;
+
+  .itemStyle {
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px;
+    margin-right: 12px;
+  }
+
+  .item {
+    min-width: calc((100vw - 200px - (var(--itemCol-6) * 12px)) / 6);
+    .img {
+      max-height: 150px;
+    }
+  }
+
+  @media (max-width: 1599px) {
+    .item {
+      .itemStyle();
+      width: calc((100vw - 200px - (var(--itemCol-4) * 12px)) / 4);;
+    }
+  }
+ 
+  @media (min-width: 1600px) {
+    .item {
+      .itemStyle();
+      width: calc((100vw - 200px - (var(--itemCol-6) * 12px)) / 6);
+    }
+  }
+}

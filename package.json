@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "antd": "^5.0.1",
+    "rimraf": "^5.0.0",
     "umi": "^4.0.32"
   },
   "devDependencies": {

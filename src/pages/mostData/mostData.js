@@ -7,22 +7,19 @@ const { Option } = Select;
 const mostDataPage = () => {
   const bigDataBoxRef = useRef();
   const itemSize = 20;
-  const screenHeight = 400;
+  const screenHeight = 240;
   const visibleCount = Math.ceil(screenHeight / itemSize);
 
   const [startIndex, setStartIndex] = useState(0);
   const [endIndex, setEndIndex] = useState(startIndex + visibleCount);
   const [startOffset, setStartOffset] = useState(0);
-  const list = Array.from(new Array(10000)).map((item, index) => {
+  const list = Array.from(new Array(100000)).map((item, index) => {
     return {
       text: `数字${index}`,
       value: index,
     };
   });
   const listHeight = list.length * itemSize;
-  // const startIndex = Math.floor(scrollTop / itemSize);
-  // const endIndex = startIndex + visibleCount;
-  // const visibleData = list.slice(startIndex, endIndex);
   const [visibleData, setVisibleData] = useState(
     list.slice(startIndex, endIndex)
   );

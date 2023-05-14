@@ -8,6 +8,7 @@ export default [
   { exact: true, path: "/draggerTest", component: "@/pages/draggerTest" },
   { exact: true, path: "/classComponent", component: "@/pages/classComponent" },
   { exact: true, path: "/mostData", component: "@/pages/mostData" },
+  { exact: true, path: "/autoPage", component: "@/pages/autoPage" },
   // {
   //   path: "/",
   //   component: "@/layouts/index",

@@ -10,6 +10,8 @@ import {
 } from "@ant-design/icons";
 import { history } from "umi";
 
+import styles from './Layout.less'
+
 function getItem(label, key, icon, children, type) {
   return {
     key,
@@ -25,6 +27,7 @@ const items = [
   getItem("测试", "sub2", <AppstoreOutlined />, [
     getItem("类组件测试", "/classComponent"),
     getItem("大数据Select", "/mostData"),
+    getItem("自适应布局", "/autoPage"),
     getItem("Submenu", "sub3", null, [
       getItem("Option 11", "11"),
       getItem("Option 12", "12"),
@@ -43,8 +46,8 @@ const LeftMenu = () => {
     history.push(item.key);
   };
   return (
-    <div>
-      <Button
+    <div className={styles.sideMenu}>
+      {/* <Button
         type="primary"
         onClick={toggleCollapsed}
         style={{
@@ -52,7 +55,7 @@ const LeftMenu = () => {
         }}
       >
         {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-      </Button>
+      </Button> */}
       <Menu
         defaultSelectedKeys={["1"]}
         defaultOpenKeys={["sub1"]}

@@ -3,6 +3,7 @@ import { TreeSelect } from "antd";
 // import { eachTree } from "../../utils/util";
 import { eachTree } from "@/utils/util";
 import { treeObj } from "../../interface/treeDataInterface";
+import styles from './index.less'
 
 const treeData = [
   {
@@ -53,17 +54,19 @@ const HomePage = () => {
   }, []);
 
   return (
-    <TreeSelect
-      showSearch
-      style={{ width: "100%" }}
-      value={value}
-      dropdownStyle={{ maxHeight: 400, overflow: "auto" }}
-      placeholder="Please select"
-      allowClear
-      treeDefaultExpandAll
-      onChange={onChange}
-      treeData={treeData}
-    />
+    <div className={styles.box}>
+      <TreeSelect
+        showSearch
+        style={{ width: "100%" }}
+        value={value}
+        dropdownStyle={{ maxHeight: 400, overflow: "auto" }}
+        placeholder="Please select"
+        allowClear
+        treeDefaultExpandAll
+        onChange={onChange}
+        treeData={treeData}
+      />
+    </div>
   );
 };
 
