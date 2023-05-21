@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { TreeSelect } from "antd";
 // import { eachTree } from "../../utils/util";
 import { eachTree } from "@/utils/util";
-import { treeObj } from "../../interface/treeDataInterface";
-import styles from './index.less'
+// import { treeObj } from "../../interface/treeDataInterface";
+import styles from "./index.less";
 
 const treeData = [
   {
@@ -40,7 +40,7 @@ const treeData = [
 
 const HomePage = () => {
   const [value, setValue] = useState(undefined);
-  const [tree, setTree] = useState([]);
+  // const [tree, setTree] = useState([]);
 
   const onChange = (newValue) => {
     setValue(newValue);
@@ -50,7 +50,7 @@ const HomePage = () => {
     const newTreeData = eachTree(treeData);
     console.log("newTreeData", newTreeData);
 
-    setTree(newTreeData);
+    // setTree(newTreeData);
   }, []);
 
   return (

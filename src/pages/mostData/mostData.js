@@ -24,7 +24,7 @@ const mostDataPage = () => {
     list.slice(startIndex, endIndex)
   );
 
-  const handleScroll = (e) => {
+  const handleScroll = () => {
     let scrollTop = bigDataBoxRef.current.scrollTop;
     let start = Math.floor(scrollTop / itemSize);
     //此时的结束索引
@@ -46,7 +46,7 @@ const mostDataPage = () => {
         // open
         showSearch
         filterOption={(input, option) =>
-          (option?.key ?? '').toLowerCase().includes(input.toLowerCase())
+          (option?.key ?? "").toLowerCase().includes(input.toLowerCase())
         }
       >
         {list.map((item) => {

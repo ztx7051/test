@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Button } from "antd";
-import { history } from "umi";
+import React, { useRef } from "react";
+// import { Button } from "antd";
+// import { history } from "umi";
 import styles from "./draggerTest.less";
 
 const Page = () => {
-  const [num, setNum] = useState();
+  // const [num, setNum] = useState();
   const divRef = useRef();
 
-  const onMouseDown = (ev) => {
-    var ev = ev || window.event
+  const onMouseDown = (e) => {
+    var ev = e || window.event;
     console.log("ev", ev);
     console.log("divRef", divRef);
 
@@ -18,15 +18,12 @@ const Page = () => {
     document.onmousemove = (e) => {
       divRef.current.style.left = e.clientX - initLeft + "px";
       divRef.current.style.top = e.clientY - initTop + "px";
-   
-   
-      document.onmouseup = ()=>{
+
+      document.onmouseup = () => {
         document.onmousemove = null;
         document.onmouseup = null;
-      }
+      };
     };
-
-    
   };
 
   return (
@@ -34,7 +31,7 @@ const Page = () => {
       className={styles.box}
       id="box"
       ref={divRef}
-      onMouseDown={e => onMouseDown(e)}
+      onMouseDown={(e) => onMouseDown(e)}
     ></div>
   );
 };

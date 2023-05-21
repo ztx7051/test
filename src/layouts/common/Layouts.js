@@ -1,16 +1,16 @@
-import { Button, Menu } from "antd";
-import { useState } from "react";
+import React from "react";
+import { Menu } from "antd";
 import {
   AppstoreOutlined,
   //   ContainerOutlined,
-  MenuFoldOutlined,
+  // MenuFoldOutlined,
   PieChartOutlined,
   DesktopOutlined,
-  MenuUnfoldOutlined,
+  // MenuUnfoldOutlined,
 } from "@ant-design/icons";
 import { history } from "umi";
 
-import styles from './Layout.less'
+import styles from "./Layout.less";
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -35,10 +35,10 @@ const items = [
   ]),
 ];
 const LeftMenu = () => {
-  const [collapsed, setCollapsed] = useState(false);
-  const toggleCollapsed = () => {
-    setCollapsed(!collapsed);
-  };
+  // const [collapsed, setCollapsed] = useState(false);
+  // const toggleCollapsed = () => {
+  //   setCollapsed(!collapsed);
+  // };
 
   // 点击目录
   const menuItemClick = (item) => {
@@ -61,7 +61,7 @@ const LeftMenu = () => {
         defaultOpenKeys={["sub1"]}
         mode="vertical"
         theme="light"
-        inlineCollapsed={collapsed}
+        inlineCollapsed={false}
         items={items}
         onClick={menuItemClick}
       />

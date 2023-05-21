@@ -18,23 +18,22 @@ class Form extends Component {
     this.setState({ formData });
   };
 
-  setValue = (name,value)=>{
+  setValue = (name, value) => {
     this.setState({
-      formData:{
+      formData: {
         ...this.state.formData,
-        [name]:value
-      }
-    })
-  }
+        [name]: value,
+      },
+    });
+  };
 
   render() {
-    const {children} = this.props;
-    const renderChildren = [];
-    React.Children.forEach(children,(child)=>{
-      if(child.type.displayName === 'formItem'){
-        const {name} = child.props;
-      }
-    })
+    // const {children} = this.props;
+    // React.Children.forEach(children,(child)=>{
+    //   if(child.type.displayName === 'formItem'){
+    //     const {name} = child.props;
+    //   }
+    // })
     return <div>index</div>;
   }
 }
