@@ -8,7 +8,7 @@ const Page = () => {
   const divRef = useRef();
 
   const onMouseDown = (e) => {
-    var ev = e || window.event;
+    let ev = e || window.event;
     console.log("ev", ev);
     console.log("divRef", divRef);
 

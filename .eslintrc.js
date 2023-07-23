@@ -4,7 +4,8 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: ["eslint:recommended", "plugin:react/recommended"],
+  extends: require.resolve("umi/eslint"),
+  // extends: ["eslint:recommended", "plugin:react/recommended", "umi/eslint"],
   overrides: [],
   parserOptions: {
     ecmaVersion: "latest",

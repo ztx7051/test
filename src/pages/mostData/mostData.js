@@ -4,7 +4,7 @@ import styles from "./mostData.less";
 
 const { Option } = Select;
 
-const mostDataPage = () => {
+const MostDataPage = () => {
   const bigDataBoxRef = useRef();
   const itemSize = 20;
   const screenHeight = 240;
@@ -88,4 +88,4 @@ const mostDataPage = () => {
   );
 };
 
-export default mostDataPage;
+export default MostDataPage;
