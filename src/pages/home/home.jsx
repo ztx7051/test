@@ -3,6 +3,7 @@ import { TreeSelect } from "antd";
 // import { eachTree } from "../../utils/util";
 import { eachTree } from "@/utils/util";
 // import { treeObj } from "../../interface/treeDataInterface";
+import { CloseOutlined } from "@ant-design/icons";
 import styles from "./index.less";
 
 const treeData = [
@@ -40,6 +41,8 @@ const treeData = [
 
 const HomePage = () => {
   const [value, setValue] = useState(undefined);
+  const [visible, setVisible] = useState(false);
+  const [contentVisible, setContentVisible] = useState(false);
   // const [tree, setTree] = useState([]);
 
   const onChange = (newValue) => {
@@ -53,6 +56,43 @@ const HomePage = () => {
     // setTree(newTreeData);
   }, []);
 
+  const hide = function () {
+    const ele = document.getElementById("drawer");
+    ele.classList.add("drawer-hidden");
+    setContentVisible(false);
+    const handle = function () {
+      ele.classList.add("hidden");
+      ele.removeEventListener("transitionend", handle);
+    };
+    ele.addEventListener("transitionend", handle);
+  };
+
+  const show = function () {
+    const ele = document.getElementById("drawer");
+    ele.classList.remove("hidden");
+    setTimeout(function () {
+      ele.classList.remove("drawer-hidden");
+    }, 100);
+
+    const fun = function () {
+      setContentVisible(true);
+      ele.removeEventListener("transitionend", fun);
+    };
+    ele.addEventListener("transitionend", fun);
+  };
+
+  const handleClick = (e) => {
+    setVisible(true);
+    show();
+  };
+
+  const handleClose = (e) => {
+    hide();
+    setVisible(false);
+    e.stopPropagation();
+  };
+
+  console.log(visible);
   return (
     <div className={styles.box}>
       <TreeSelect
@@ -66,6 +106,21 @@ const HomePage = () => {
         onChange={onChange}
         treeData={treeData}
       />
+
+      <div className={`${styles.cssBox} `} onClick={(e) => handleClick(e)}>
+        展开动画
+        <div className={`${styles.drawer} hidden drawer-hidden`} id="drawer">
+          {contentVisible && (
+            <>
+              这里面有许多东西
+              <CloseOutlined
+                onClick={(e) => handleClose(e)}
+                className={styles.close}
+              />
+            </>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
