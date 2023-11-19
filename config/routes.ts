@@ -9,12 +9,13 @@ export default [
   { exact: true, path: "/classComponent", component: "@/pages/classComponent" },
   { exact: true, path: "/mostData", component: "@/pages/mostData" },
   { exact: true, path: "/autoPage", component: "@/pages/autoPage" },
+  { exact: true, path: "/tablePage", component: "@/pages/tablePage" },
+  { exact: true, path: "/tablePageThree", component: "@/pages/tablePageThree" },
   // {
   //   path: "/",
   //   component: "@/layouts/index",
   //   routes: [
-     
+
   //   ],
   // },
-  
 ];

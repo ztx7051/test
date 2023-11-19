@@ -1,13 +1,16 @@
 {
   "compilerOptions": {
+    "baseUrl": ".", // This must be specified if "paths" is.
+    "paths": {
+      "@/*": [
+        "src/*" // 该处的映射是相对于 baseUrl 的
+      ]
+    },
     "target": "ES6",
     "module": "commonjs",
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": "./",
-    "paths": {
-      "@/*": ["src/*"]
-    }
+    "allowSyntheticDefaultImports": true
   },
+  "include": ["src/**/*"],
   "exclude": ["node_modules"],
   "extends": "./src/.umi/tsconfig.json"
 }

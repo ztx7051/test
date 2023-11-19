@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { TreeSelect } from "antd";
 // import { eachTree } from "../../utils/util";
-import { eachTree } from "@/utils/util";
+import { eachTree, removeDuplicates } from "@/utils/util";
 // import { treeObj } from "../../interface/treeDataInterface";
 import { CloseOutlined } from "@ant-design/icons";
 import styles from "./index.less";
@@ -44,6 +44,7 @@ const HomePage = () => {
   const [visible, setVisible] = useState(false);
   const [contentVisible, setContentVisible] = useState(false);
   // const [tree, setTree] = useState([]);
+  removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]);
 
   const onChange = (newValue) => {
     setValue(newValue);
@@ -92,7 +93,81 @@ const HomePage = () => {
     e.stopPropagation();
   };
 
-  console.log(visible);
+  // console.log(visible);
+
+  // const promise = new Promise((resolve, reject) => {
+  //   console.log(1);
+  //   resolve("success");
+  //   console.log(2);
+  // });
+  // promise.then(() => {
+  //   console.log(3);
+  // });
+  // console.log(4);
+
+  // 1: global.VO = {t}
+  let t = 111;
+  // 2: fun.[[Scopes]] = [global.VO]
+  const fun = () => {
+    // 3: fun.AO = {a,b}，并创建一个空的闭包对象fun.Closure = {}
+    let a = 1,
+      b = 2,
+      c = 3;
+    // 4: 遇到函数，解析到函数会使用a，所以 fun.Closure={a:1} (实际没这么简单)
+    // 5: fun1.[[Scopes]] = [global.VO, fun.Closure]
+    function fun1() {
+      console.log(a);
+    }
+    fun1();
+    let obj = {
+      // 6: 遇到函数，解析到函数会使用b，所以 fun.Closure={a:1,b:2}
+      // 7: method.[[Scopes]] = [global.VO, fun.Closure]
+      method() {
+        console.log(b);
+      },
+    };
+  };
+
+  const obj = {};
+  obj.fun = fun;
+
+  // 执行到这里时，预编译 fun
+  fun();
+  console.log("obj", obj);
+
+  function maxProfit(prices) {
+    let min = 0;
+    let max = 0;
+    let index = 1;
+    const maxprofit = [];
+
+    while (index !== prices.length) {
+      if (prices[index] < prices[min]) {
+        min = index;
+        max = index;
+      }
+
+      if (prices[index] > prices[max]) {
+        max = index;
+        maxprofit.push(prices[max] - prices[min]);
+      }
+      ++index;
+    }
+
+    maxprofit.sort(function (a, b) {
+      return b - a;
+    });
+    console.log("maxprofit", maxprofit);
+
+    if (max === min) {
+      return maxprofit[0] || 0;
+    } else {
+      return prices[max] - prices[min];
+    }
+  }
+
+  maxProfit([3, 2, 6, 5, 0, 3]);
+
   return (
     <div className={styles.box}>
       <TreeSelect
@@ -121,6 +196,20 @@ const HomePage = () => {
           )}
         </div>
       </div>
+
+      <div>视频</div>
+      <video
+      // src="https://webstatic.mihoyo.com/upload/op-public/2023/02/23/5e355dea3eaf1f31ea497d5703b0c505_2947932349865370574.mp4"
+      // playsinline
+      // x5-video-player-type="h5"
+      // autoPlay="autoplay"
+      // playsInline="playsinline"
+      // // playsInline
+      // loop="loop"
+      // preload="auto"
+      // muted
+      // className={styles.video}
+      ></video>
     </div>
   );
 };

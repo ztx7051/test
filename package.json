@@ -21,8 +21,11 @@
   "dependencies": {
     "antd": "^5.0.1",
     "lint-staged": "^13.2.2",
+    "lodash": "^4.17.21",
     "rimraf": "^5.0.0",
-    "umi": "^4.0.32"
+    "umi": "^4.0.32",
+    "umi-request": "^1.4.0",
+    "yet-another-abortcontroller-polyfill": "^0.0.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

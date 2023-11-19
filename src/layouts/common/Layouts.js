@@ -33,6 +33,8 @@ const items = [
       getItem("Option 12", "12"),
     ]),
   ]),
+  getItem("table列表", "/tablePage", <DesktopOutlined />),
+  getItem("table列表2", "/tablePageThree", <DesktopOutlined />),
 ];
 const LeftMenu = () => {
   // const [collapsed, setCollapsed] = useState(false);
